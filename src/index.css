@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =====================================================================
+   MALA JUNTA · estilos base
+   Variables de acento configurables desde el panel (con respaldo dorado).
+   ===================================================================== */
+:root {
+  --acento: #e5b96a;   /* dorado */
+  --acento-2: #b8843a; /* bronce */
+}
+
+@layer base {
+  html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    overscroll-behavior-y: none;
+  }
+  body {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    @apply bg-ink-950 text-bone font-sans antialiased;
+    background-image:
+      radial-gradient(circle at 12% -5%, rgba(229, 185, 106, 0.09), transparent 45%),
+      radial-gradient(circle at 92% 105%, rgba(193, 79, 47, 0.07), transparent 45%),
+      linear-gradient(180deg, #0a0a0b 0%, #0c0c0d 100%);
+    background-attachment: fixed;
+  }
+  footer {
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px));
+  }
+  ::selection {
+    @apply bg-acid-400 text-ink-950;
+  }
+  .font-display {
+    letter-spacing: 0.01em;
+  }
+}
+
+@layer components {
+  /* ── Tarjeta ─────────────────────────────────────────────────────── */
+  .glass {
+    @apply bg-ink-900 border border-white/10;
+  }
+  .glass-strong {
+    @apply bg-ink-900 border border-white/20;
+  }
+  .card-brutal {
+    @apply bg-ink-900 border-2 border-ink-600 transition-all duration-200;
+  }
+  .card-brutal:hover {
+    @apply border-acid-400 -translate-x-0.5 -translate-y-0.5;
+    box-shadow: 6px 6px 0 0 #d4a24e;
+  }
+
+  /* ── Texto con degradado de acento (marca) ──────────────────────── */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      100deg,
+      var(--acento, #e5b96a) 0%,
+      #f2dca0 45%,
+      var(--acento-2, #b8843a) 120%
+    );
+    background-size: 200% auto;
+  }
+  .shimmer-text {
+    @apply gradient-text animate-shimmer;
+  }
+  .text-stroke {
+    -webkit-text-stroke: 1.5px var(--acento, #e5b96a);
+    color: transparent;
+  }
+
+  /* ── Botones ────────────────────────────────────────────────────── */
+  .btn-gold,
+  .btn-acid {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3
+      bg-acid-400 text-ink-950 font-display uppercase tracking-wider text-sm
+      border-2 border-acid-400 transition-all duration-150;
+    box-shadow: 4px 4px 0 0 #000;
+  }
+  .btn-gold:hover,
+  .btn-acid:hover {
+    @apply -translate-x-0.5 -translate-y-0.5;
+    box-shadow: 6px 6px 0 0 #000;
+  }
+  .btn-flame {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3
+      bg-flame-500 text-white font-display uppercase tracking-wider text-sm
+      border-2 border-flame-500 transition-all duration-150;
+    box-shadow: 4px 4px 0 0 #000;
+  }
+  .btn-flame:hover {
+    @apply -translate-x-0.5 -translate-y-0.5;
+    box-shadow: 6px 6px 0 0 #000;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-6 py-3 font-display uppercase tracking-wider text-sm
+      border-2 border-white/20 text-bone hover:border-acid-400 hover:text-acid-400
+      transition-all duration-150;
+  }
+
+  /* ── Detalles ───────────────────────────────────────────────────── */
+  .divider-gold,
+  .divider-acid {
+    height: 2px;
+    background-image: linear-gradient(90deg, transparent, #e5b96a, transparent);
+  }
+  .tag-stamp {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest
+      border border-current;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Marquee (cinta de texto en movimiento) */
+.marquee-track {
+  display: inline-flex;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+/* Scrollbar global */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0b;
+}
+::-webkit-scrollbar-thumb {
+  background: #b8843a;
+  border: 2px solid #0a0a0b;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e5b96a;
+}
