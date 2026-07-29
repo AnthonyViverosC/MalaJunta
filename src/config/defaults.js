@@ -13,7 +13,7 @@ export const CONFIG_DEFAULT = {
   logo_url: BRAND_LOGO,
   portada_url: '/cocteles/Polvo de media noche.jpeg',
   direccion: 'Cra. 32A #19-47',
-  barrio: 'Zona centro',
+  barrio: 'B/PALERMO SUBTERRÁNEO',
   telefonos: '321 679 7668',
   whatsapp: '573216797668',
   maps_url: '',

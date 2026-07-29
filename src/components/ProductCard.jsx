@@ -1,5 +1,4 @@
 import { memo, useState } from 'react';
-import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 import BottlePlaceholder from './BottlePlaceholder.jsx';
 import { formatearPrecio } from '../data/menu.js';
@@ -20,14 +19,9 @@ function ProductCard({ producto, index = 0 }) {
       : 'botella';
 
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 22 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.4, delay: Math.min(index, 6) * 0.04 }}
+    <article
       className="group relative bg-ink-900 border-2 border-ink-600 hover:border-acid-400
-                 transition-all duration-200 hover:-translate-x-0.5 hover:-translate-y-0.5"
-      style={{ '--tw-shadow': 'none' }}
+                 transition-colors duration-200"
     >
       {/* Ribbon destacado */}
       {producto.destacado && (
@@ -91,7 +85,7 @@ function ProductCard({ producto, index = 0 }) {
           </p>
         )}
       </div>
-    </motion.article>
+    </article>
   );
 }
 

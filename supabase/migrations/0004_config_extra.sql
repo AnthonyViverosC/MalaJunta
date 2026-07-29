@@ -12,7 +12,7 @@ update configuracion set
   eslogan   = coalesce(eslogan, 'Reúne a la mala junta'),
   portada_url = coalesce(portada_url, '/cocteles/Polvo de media noche.jpeg'),
   direccion = coalesce(direccion, 'Cra. 32A #19-47'),
-  barrio    = coalesce(barrio, 'Zona centro'),
+  barrio    = coalesce(barrio, 'B/PALERMO SUBTERRÁNEO'),
   telefonos = coalesce(telefonos, '321 679 7668'),
   whatsapp  = coalesce(whatsapp, '573216797668'),
   info_contacto = coalesce(info_contacto,
