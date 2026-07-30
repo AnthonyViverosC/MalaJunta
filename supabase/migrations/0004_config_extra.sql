@@ -9,7 +9,7 @@ alter table configuracion add column if not exists maps_url text;
 -- Valores iniciales de MALA JUNTA (si están vacíos).
 update configuracion set
   nombre_negocio = coalesce(nullif(nombre_negocio, ''), 'MALA JUNTA'),
-  eslogan   = coalesce(eslogan, 'Reúne a la mala junta'),
+  eslogan   = coalesce(eslogan, 'Es más que una copa'),
   portada_url = coalesce(portada_url, '/cocteles/Polvo de media noche.jpeg'),
   direccion = coalesce(direccion, 'Cra. 32A #19-47'),
   barrio    = coalesce(barrio, 'B/PALERMO SUBTERRÁNEO'),
